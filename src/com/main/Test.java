@@ -39,7 +39,7 @@ public class Test {
 					+ "company varchar(20)"
 					+ ");";
 			
-			//stmt.executeUpdate(createQuery);
+			stmt.executeUpdate(createQuery);
 			System.out.println("table created");
 			//insert data into table flatmates
 			System.out.println("enter total no of members : ");
@@ -84,10 +84,12 @@ public class Test {
 		catch(Exception e){
 			System.out.println("exception in test class while executing query");
 			System.out.println(e);
+			e.printStackTrace();
 		}
 		finally{
 			stmt.close();
 			connection.close();
+			sc.close();
 		}
 	}
 }
